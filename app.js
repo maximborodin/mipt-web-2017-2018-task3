@@ -13,8 +13,8 @@ $(document).ready(function() {
     $('#root').append('<button id="add_task">Добавить Текст</button>');
 
     $('#add_task').click(function () {
-        console.log($('add_task_input').val());
         $('#Ul').append('<li>' + $('#add_task_input').val() + '</li>');
+        $('#add_task_input').val('');
     });
 });
 

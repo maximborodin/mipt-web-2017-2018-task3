@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
 //     $('#root'.append($('<ul id = list>ulul</ul>').text('asdasd')));
     $('#root').append('<ul id="Ul"></ul>');
@@ -12,11 +13,18 @@ $(document).ready(function() {
     $('#root').append('<input type="text" id="add_task_input">');
     $('#root').append('<button id="add_task">Добавить Текст</button>');
 
-    $('#add_task').click(function () {
-        $('#Ul').append('<li>' + $('#add_task_input').val() + '</li>');
-        $('#add_task_input').val('');
-    });
+    $('#add_task').click(function(){
+        addTask();
+    } );
 });
+
+function addTask() {
+    var task = $('<li> <span>'+ $('#add_task_input').val()+'</span> <button class="button_delete">Удалить</button> </li>');
+    $('#Ul').append(task);
+    $('.button_delete', task).click(function(){
+        $(this).parent().remove()
+    });
+}
 
 
 
